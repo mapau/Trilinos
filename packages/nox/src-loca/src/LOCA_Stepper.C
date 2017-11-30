@@ -1034,14 +1034,54 @@ LOCA::Stepper::withinThreshold()
   return (fabs(conParam-targetValue) < relt*fabs(initialStep));
 }
 
-Teuchos::ParameterList &
-LOCA::Stepper::getParams()
+void
+LOCA::Stepper::setStartValue(double const sv)
 {
-  return *stepperList;
+  startValue = sv;
+  return;
 }
 
-Teuchos::ParameterList &
-LOCA::Stepper::getStepSizeParams()
+double
+LOCA::Stepper::getStartValue() const
 {
-  return *parsedParams->getSublist("Step Size");
+  return startValue;
+}
+
+void
+LOCA::Stepper::setMaxValue(double const mv)
+{
+  maxValue = mv;
+  return;
+}
+
+double
+LOCA::Stepper::getMaxValue() const
+{
+  return maxValue;
+}
+
+void
+LOCA::Stepper::setMinValue(double const mv)
+{
+  minValue = mv;
+  return;
+}
+
+double
+LOCA::Stepper::getMinValue() const
+{
+  return minValue;
+}
+
+void
+LOCA::Stepper::setStepSize(double const ss)
+{
+  stepSize = ss;
+  return;
+}
+
+double
+LOCA::Stepper::getStepSize() const
+{
+  return stepSize;
 }

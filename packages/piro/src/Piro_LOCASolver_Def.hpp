@@ -151,17 +151,10 @@ Piro::LOCASolver<Scalar>::getSolver()
 }
 
 template<typename Scalar>
-Teuchos::ParameterList &
-Piro::LOCASolver<Scalar>::getStepperParams()
+Teuchos::RCP<LOCA::Stepper>
+Piro::LOCASolver<Scalar>::getStepper()
 {
-  return stepper_->getParams();
-}
-
-template<typename Scalar>
-Teuchos::ParameterList &
-Piro::LOCASolver<Scalar>::getStepSizeParams()
-{
-  return stepper_->getStepSizeParams();
+  return stepper_;
 }
 
 template <typename Scalar>
